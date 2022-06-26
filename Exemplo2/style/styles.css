@@ -1,0 +1,309 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(rgba(17, 17, 17, 0.8), rgba(20, 20, 20, 1)), url(../images/bg.jpeg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* MENU */
+
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+nav{
+    background: rgba(22, 22, 22, 0.2);;
+    height: 80px;
+    width: 100%;
+}
+
+label.logo{
+    color: white;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+}
+
+ul{
+    z-index: 300;
+}
+
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+nav ul li a{
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+a.active,a:hover{
+    background: orange;
+    transition: .5s;
+}
+
+.checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check{
+    display: none;
+}
+
+/* Conteudo Principal */
+
+main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main .texts{
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+main .texts h1{
+    color: orange;
+    font-size: 50px;
+}
+
+main .texts h2{
+    color: #fff;
+    font-size: 15px;
+    font-weight: 100;
+    font-style: italic;
+}
+
+/* Botões */
+
+ 
+.btns{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+
+.btns button{
+    width: 175px;
+    height: 50px;
+    cursor: pointer;
+    border: 1px solid orange;
+    color: orange;
+    text-transform: uppercase;
+    background-color: transparent;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+    border-radius: 20px;
+    position: relative;
+    transition: 1.5s;
+}
+
+
+.btns button:before{
+    border-radius: 20px;
+    content: '';
+    bottom: 0px;
+    left: 0px;
+    width: 0px;
+    height: 50px;
+    position: absolute;
+    background-color: rgb(61, 61, 61);
+    z-index: -1;
+    transition: 1s;
+}
+
+.btns button:hover:before{
+    width: 100%;
+}
+
+.btns button:hover{
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+
+/* Responsividade */
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+
+    nav{
+        background-color: #000;
+    }
+
+    label.logo{
+        font-size: 30px;
+        padding: 0 30px;
+    }
+    
+    .checkbtn{
+        display: block;
+    }
+
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #000;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+      
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+
+    nav ul li a{
+        font-size: 20px;
+    }
+
+    a:hover,a.active{
+        background: none;
+        color: orange;
+    }
+      
+    #check:checked ~ ul{
+        left: 0;
+    }
+
+    main .texts{
+        padding: 5px;
+    }
+
+    main .texts h1{
+        font-size: 25px;
+    }
+    
+    main .texts h2{
+        font-size: 13px;
+    }
+
+    .btns button{
+        width: 120px;
+        height: 40px;
+    }
+
+    .btns button:before{
+        height: 40px;
+    }
+
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+
+    nav{
+        background-color: #000;
+    }
+
+    label.logo{
+        font-size: 30px;
+        padding: 0 30px;
+    }
+
+    .checkbtn{
+        display: block;
+    }
+
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #000;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+
+    nav ul li a{
+        font-size: 20px;
+    }
+
+    a:hover, a.active{
+        background: none;
+        color: orange;
+    }
+
+    #check:checked ~ ul{
+        left: 0;
+    }
+
+    main .texts{
+        padding: 5px;
+    }
+
+    main .texts h1{
+        font-size: 35px;
+    }
+
+    .btns button{
+        width: 120px;
+        height: 40px;
+    }
+
+    .btns button:before{
+        height: 40px;
+    }
+
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+    label.logo{
+        font-size: 25px;
+        padding: 0 15px;
+    }
+
+    nav ul li a{
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+
+}
+
+@media screen and (min-width: 1201px) {
+
+}
